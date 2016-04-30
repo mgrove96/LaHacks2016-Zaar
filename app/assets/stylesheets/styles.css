@@ -1,0 +1,282 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    /* background-color: LightGray; */
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.top-navigation {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #DDD;
+    z-index: 9999;
+}
+
+.top-navigation > .content {
+	width: 970px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.top-navigation .logo {
+    height: 7.5rem;
+    margin-left: 0;
+}
+
+.top-navigation .links {
+	float: right;
+	font-size: 16px;
+	color: #838994;
+	letter-spacing: 0.03em;
+	margin-top: 25px;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+.top-navigation .links > li {
+	display: inline-block;
+	margin-left: 1.563em;
+
+}
+
+.top-navigation .links > .active {
+	color: #4c5058;
+	font-weight: 500;
+}
+
+.top-navigation .links > li:hover {
+	cursor: pointer;
+	color: #333333;
+}
+
+.content {
+    padding: 0 0.938rem;
+    margin: 0 auto;
+    min-width: 37.5rem;
+}
+
+.introduction {
+	background:
+	linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+	url('../assets/laHacksBackground.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	height: 80rem;
+    overflow: auto;
+}
+
+.introduction h1 {
+    margin-top: 32rem;
+    font-size: 5rem;
+}
+
+.introduction h3 {
+    margin-top: 1.25rem;
+    font-size: 2rem;
+    margin-botton: 1.25rem;
+}
+
+.introduction h1, .introduction h3 {
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+}
+
+.icons {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.login-button {
+    width: 9.688rem;
+    background-color: #a8021b;
+    border-color: #028aa9;
+    text-shadow: none;
+    border-style: none;
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.login-button:hover {
+    background-color: #028aa9;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
+.signup-button {
+    width: 9.688rem;
+    background-color: #028aa9;
+    border-color: #028aa9;
+    text-shadow: none;
+    border-style: none;
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.signup-button:hover {
+    background-color: #a8021b;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.introduction .buttons {
+    color: white;
+    text-align: center;
+    margin-top: 1.563rem;
+}
+
+.who {
+    background-color: #028aa9 ;
+    overflow: hidden;
+    padding-bottom: 5rem;
+    height: 65rem;
+
+}
+
+.who .devices {
+    margin-top: 5rem;
+    width: 33.3%;
+    display: inline-block;
+    /* styles to assist with debugging */
+}
+
+
+.flexdiv {
+	display: flex;
+}
+
+.caption > h3{
+	font-weight: 400;
+    font-size: 1.563rem;
+    margin: 2.5rem 0px 1.875rem;
+}
+
+
+.who .content {
+    margin-top: 15rem;
+    min-width: 100rem;
+    padding: none;
+    color: white;
+    text-align: center;
+}
+
+.who h2 {
+    font-size: 2.75rem;
+    margin: 1.625rem 0 3.125rem;
+    font-weight: 300;
+}
+
+.what {
+	background-color: #bd9773;
+	height: 65rem;
+    color: white;
+}
+
+.why {
+    background-color: #a8021b;
+    height: 65rem;
+    color: white;
+}
+
+.social .icons > li {
+    border-radius: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    margin: 1.25rem 5px;
+    border: 1px solid #eaebec;
+    padding: 0.625rem 0;
+    text-align: center;
+}
+
+.social .twitter {
+    color: #55acee;
+}
+
+.social .facebook {
+    color: #4c66a4;
+}
+
+.social .instagram {
+    color: #3f729b;
+}
+
+.social .copy {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #838994;
+}
+
+.social {
+    background-color: #fff;
+    overflow: auto;
+    padding-bottom: 9.375rem;
+    text-align: center;
+}
+
+.social hr {
+    border: 0;
+    border-top: 1px solid #eaebec;
+    margin: 1.313rem 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+ul, menu, dir {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+h5 {
+    font: inherit;
+    display: block;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+
+
+
+@media (min-width: 48rem) {
+    .content {
+        width: 46rem;
+    }
+}
+@media (min-width: 62rem) {
+    .content {
+        width: 60rem;
+    }
+}
+@media (min-width: 75rem) {
+    .content {
+        width: 60%;
+    }
+}
