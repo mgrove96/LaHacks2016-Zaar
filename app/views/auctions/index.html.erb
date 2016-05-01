@@ -3,11 +3,6 @@
 <p id="notice"><%= notice %></p> -->
 
 <div class="panel panel-default">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Listing Auctions</h1>
-    </div>
-  </div>
 
 <div class="panel-body">
 <table>
@@ -24,6 +19,7 @@
   <tbody>
     <% @auctions.each do |auction| %>
       <tr>
+      <%= image_tag auction.image.url(:medium) %>
         <td><%= auction.title %></td>
         <td><%= auction.description %></td>
         <td><%= auction.price %></td>

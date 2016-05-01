@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Zaar</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -12,6 +12,15 @@
 
 
 <%= render 'layouts/nav' %>
+<div class="navbar-wrapper">
+  <% if user_signed_in? %>
+	<% Category.all.each do |category| %>
+		<%= link_to category.name, auctions_path(category: category.name) %>
+	<% end %>
+	<% end %>
+</div>
+
+
 	<!--
 	<div class='container'>
 		<% flash.each do |name, msg| %>
@@ -21,6 +30,8 @@
 		-->
 		
 		<%= yield %>
+
+
 
 
 

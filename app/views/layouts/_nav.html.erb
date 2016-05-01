@@ -2,7 +2,7 @@
 		<div class="content">
 			
 
-			<%= image_tag("ZaarLogo1.svg", :alt => "Zaar", :class => "logo", :width => 150) %>
+			<%= link_to( image_tag("ZaarLogo1.svg", :alt => "Zaar", :class => "logo", :width => 150), root_path) %>
 			<ul class="links">
 				<!--
 				<li class="active">Meet SickName</li>
@@ -11,9 +11,9 @@
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-					<li>What?</li>
-					<li>Why?</li>
-					<li>Who?</li>
+					<li class="what-button">What?</li>
+					<li class="why-button">Why?</li>
+					<li class="who-button">Who?</li>
           <li><%= link_to "Log in", new_user_session_path %></li>
         <% end %>
 			</ul>

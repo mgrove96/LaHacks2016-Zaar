@@ -248,6 +248,11 @@ body {
     margin: 1.313rem 0;
 }
 
+.navbar-wrapper {
+    padding-top:70px;
+    text-align: center;
+}
+
 ol, ul {
     list-style: none;
 }

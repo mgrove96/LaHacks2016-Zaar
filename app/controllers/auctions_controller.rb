@@ -5,7 +5,13 @@ class AuctionsController < ApplicationController
   # GET /auctions
   # GET /auctions.json
   def index
-    @auctions = Auction.all
+    if params[:category].blank?
+      @auctions = Auction.all
+    else
+      @category_d = Category.find_by(name: params[:category]).id
+      @auctions = Auction.where(category_d: @category_d).order("created_at DESC")
+    end
+
   end
 
   # GET /auctions/1
@@ -56,7 +62,6 @@ class AuctionsController < ApplicationController
     @auction.destroy
     respond_to do |format|
       format.html { redirect_to auctions_url, notice: 'Auction was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -72,6 +77,6 @@ class AuctionsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def auction_params
-      params.require(:auction).permit(:title, :description, :price, :image)
+      params.require(:auction).permit(:title, :description, :price, :image, :category_d)
     end
 end
