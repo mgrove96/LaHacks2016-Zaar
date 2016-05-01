@@ -1,5 +1,6 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show]
 
   # GET /auctions
   # GET /auctions.json
@@ -29,10 +30,10 @@ class AuctionsController < ApplicationController
     respond_to do |format|
       if @auction.save
         format.html { redirect_to @auction, notice: 'Auction was successfully created.' }
-        format.json { render :show, status: :created, location: @auction }
+
       else
         format.html { render :new }
-        format.json { render json: @auction.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -42,11 +43,9 @@ class AuctionsController < ApplicationController
   def update
     respond_to do |format|
       if @auction.update(auction_params)
-        format.html { redirect_to @auction, notice: 'Auction was successfully updated.' }
-        format.json { render :show, status: :ok, location: @auction }
+        format.html { redirect_to @auction, notice: 'Auction was successfully updated.' } 
       else
         format.html { render :edit }
-        format.json { render json: @auction.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -67,8 +66,12 @@ class AuctionsController < ApplicationController
       @auction = Auction.find(params[:id])
     end
 
+    def correct_user
+      @auction = current_user.auctions.find_by(id: params[:id])
+      redirect_to auctions_path, notice: "Not authorized to edit this auction" if @auction.nil?
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def auction_params
-      params.require(:auction).permit(:title, :description, :price)
+      params.require(:auction).permit(:title, :description, :price, :image)
     end
 end

@@ -63,6 +63,14 @@ body {
     min-width: 37.5rem;
 }
 
+.pusher {
+    margin-left: 2rem;
+}
+
+.checkbox label {
+    padding-left: 0;
+}
+
 .introduction {
 	background:
 	linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
