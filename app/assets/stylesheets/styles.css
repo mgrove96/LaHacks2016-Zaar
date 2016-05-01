@@ -66,7 +66,7 @@ body {
 .introduction {
 	background:
 	linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-	url('../assets/laHacksBackground.jpeg');
+	url('https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=706c42e86e7905f30139f4475310ed5f');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center bottom;
