@@ -77,7 +77,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
@@ -85,5 +84,12 @@ Rails.application.configure do
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
+}
+config.action_mailer.default_url_options = {:host => 'myzaar.co'}
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :address => "127.0.0.1",
+  :port    => 25,
+  :domain  => 'myzaar.co'
 }
 end
