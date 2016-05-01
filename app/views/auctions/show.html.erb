@@ -23,6 +23,8 @@
   <%= @auction.price %>
 </p>
 
+<% if auction.user == current_user %>
 <%= link_to 'Edit', edit_auction_path(@auction) %> |
+<% end %>
 <%= link_to 'Back', auctions_path %>
 </div>
